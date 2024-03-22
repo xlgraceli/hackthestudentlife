@@ -3,8 +3,8 @@ const fs = require('fs');
 
 // Set AWS credentials (if not set via environment variables)
 const credentials = {
-  accessKeyId: 'AKIAVMKLFLXFVOHCPBFF',
-  secretAccessKey: '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'
+  accessKeyId: '',
+  secretAccessKey: ''
 };
 AWS.config.update({ credentials });
 
