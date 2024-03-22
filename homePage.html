@@ -2,6 +2,40 @@
 
 <html>
   <head>
+    <script>
+      const AWS = require('aws-sdk');
+      const fs = require('fs');
+      
+      
+
+      // Create an S3 instance
+      const s3 = new AWS.S3();
+
+      // Set AWS credentials (if not set via environment variables)
+      const credentials = {
+        accessKeyId: 'AKIAVMKLFLXFVOHCPBFF',
+        secretAccessKey: '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'
+      };
+      AWS.config.update({ credentials });
+      // Define parameters for retrieving the file
+      const params = {
+        Bucket: 'uoft2024questionbank',
+        Key: '2024winterECE110Q1a.png' // Path to the file in the bucket
+      };
+
+      const presignedUrl = s3.getSignedUrl('getObject', {
+        Bucket: 'uoft2024questionbank',
+        Key: '2024winterECE110Q1a.png',
+        Expires: 3600,
+      });
+      document.getElementById('myImage').src = presignedUrl;
+
+      // Now you can use `presignedUrl` in your frontend to display the image
+      console.log('hello');
+      console.log('Presigned URL:', presignedUrl);
+    </script>
+  </head>
+  <head>
     <title>1st Year UofT Engineering Question Database</title>
     <link rel="stylesheet" href="homePage.css">
   </head>
@@ -10,6 +44,7 @@
     
     <header class = "header">
       <div>1st Year Skule Exam Question Database</div>
+      <img id="myImage" src="" alt="Image placeholder">
     </header>
    
     <div class = "grid">
