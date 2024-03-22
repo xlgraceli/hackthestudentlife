@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Question Name</title>
+    <link rel="stylesheet" href="questionPage.css">
+</head>
+
+<body>
+    <div class="class-name">
+        ECE110
+    </div>
+    <div class="exam-date">
+        Winter 2018 Term Test 2
+    </div>
+    <div class="category">
+        Topic(s): Circuits
+        <a href = 'topic2.html'><button> back</button></a>
+    </div>
+    
+    <div>
+        <img class="question-image" src="images/2018winterECE110Q3a.png">
+        <button class="button" onclick="toggleAnswer('answer1')">Show Answer</button>
+        <div id="answer1" class="answer-image" style="display: none;">
+            <img src="images/2018winterECE110A3a.png">
+        </div>
+    </div>
+
+    <div>
+        <img class="question-image" src="images/2018winterECE110Q3b.png">
+        <button class="button" onclick="toggleAnswer('answer2')">Show Answer</button>
+        <div id="answer2" class="answer-image" style="display: none;">
+            <img src="images/2018winterECE110A3b.png">
+        </div>
+    </div>
+
+    <div>
+        <img class="question-image" src="images/2018winterECE110Q3c.png">
+        <button class="button" onclick="toggleAnswer('answer3')">Show Answer</button>
+        <div id="answer3" class="answer-image" style="display: none;">
+            <img src="images/2018winterECE110A3c.png">
+        </div>
+    </div>
+
+    <div>
+        <img class="question-image" src="images/2018winterECE110Q3d.png">
+        <button class="button" onclick="toggleAnswer('answer4')">Show Answer</button>
+        <div id="answer4" class="answer-image" style="display: none;">
+            <img src="images/2018winterECE110A3d.png">
+        </div>
+    </div>
+
+    <div>
+        <img class="question-image" src="images/2018winterECE110Q3e.png">
+        <button class="button" onclick="toggleAnswer('answer5')">Show Answer</button>
+        <div id="answer5" class="answer-image" style="display: none;">
+            <img src="images/2018winterECE110A3e.png">
+        </div>
+    </div>
+
+    <script>
+        function toggleAnswer(answerId) {
+            var answerImage = document.getElementById(answerId);
+            var toggleButton = event.target;
+            if (answerImage.style.display === "none") {
+                answerImage.style.display = "block";
+                toggleButton.innerText = "Hide Answer";
+            } else {
+                answerImage.style.display = "none";
+                toggleButton.innerText = "Show Answer";
+            }
+        }
+    </script>
+
+</body>
+
+</html>
