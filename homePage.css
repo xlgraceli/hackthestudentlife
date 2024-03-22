@@ -1,8 +1,46 @@
 .header {
+  display: grid;
+  margin: 50px;
+  margin-bottom: 30px;
   height: 55px;
-  display: flex;
-  flex-direction: row;
-  background-color: blue;
+  grid-template-columns: 1fr;
+  background-color: lightblue;
+  color: black;
+  align-items: center;
+  text-align: center;
+  font-size: 36px;
+  font-weight: bold;
+}
 
+.grid {
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: 0.5fr 1fr 1fr 1fr 1fr 1fr;
+  column-gap: 20px;
+  row-gap: 40px;
+  margin-left: 50px;
+  margin-right: 50px;
+}
 
+.individualClass {
+  text-align: center;
+  height: 300px;
+  font-weight: bold;
+  font-size: 28px;
+  background-color: lightblue;
+  padding-top: 10px;
+}
+
+.semester {
+  display: grid;
+  font-size: 24px;
+  background-color: lightgrey;
+  text-align: center;
+  font-weight: bold;
+  align-items: center;
+}
+
+.course-icon {
+  height: 180px;
+  margin: 20px;
 }

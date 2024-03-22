@@ -1,0 +1,48 @@
+.header {
+  font-size: 40px;
+  font-weight: bold;
+  background-color: lightblue;
+  padding: 30px;
+  margin: 30px;
+}
+
+.main-page {
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+  margin: 30px;
+
+}
+
+.sidebar {
+  margin-left: 20px;
+}
+
+
+.sidebar-title {
+  font-weight: bold;
+  font-size: 35px;
+  padding-bottom: 25px;
+}
+
+.topic-titles {
+  font-size: 20px;
+  font-weight: bold;
+  padding-bottom: 30px;
+
+}
+
+.main-section {
+  display: grid;
+  border-width: 1px;
+  border-color: black;
+  border: solid;
+
+}
+
+
+.indiv-question {
+  height: 50px;
+  border: solid;
+  padding: 10px;
+
+}
