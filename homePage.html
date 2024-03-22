@@ -1,74 +1,80 @@
 <!DOCTYPE html>
 
 <html>
-  <head>
-    <script>
-      const AWS = require('aws-sdk');
-      const fs = require('fs');
-      
-      
 
-      // Create an S3 instance
-      const s3 = new AWS.S3();
+<head>
+  <script>
+    const AWS = require('aws-sdk');
+    const fs = require('fs');
 
-      // Set AWS credentials (if not set via environment variables)
-      const credentials = {
-        accessKeyId: 'AKIAVMKLFLXFVOHCPBFF',
-        secretAccessKey: '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'
-      };
-      AWS.config.update({ credentials });
-      // Define parameters for retrieving the file
-      const params = {
-        Bucket: 'uoft2024questionbank',
-        Key: '2024winterECE110Q1a.png' // Path to the file in the bucket
-      };
 
-      const presignedUrl = s3.getSignedUrl('getObject', {
-        Bucket: 'uoft2024questionbank',
-        Key: '2024winterECE110Q1a.png',
-        Expires: 3600,
-      });
-      document.getElementById('myImage').src = presignedUrl;
 
-      // Now you can use `presignedUrl` in your frontend to display the image
-      console.log('hello');
-      console.log('Presigned URL:', presignedUrl);
-    </script>
-  </head>
-  <head>
-    <title>1st Year UofT Engineering Question Database</title>
-    <link rel="stylesheet" href="homePage.css">
-  </head>
-  
-  <body>
-    
-    <header class = "header">
-      <div>1st Year Skule Exam Question Database</div>
-      <img id="myImage" src="" alt="Image placeholder">
-    </header>
-   
-    <div class = "grid">
-      <div class = "semester">F TERM</div>
-      <div class = "individualClass"><img class= "course-icon" src="images/mag.jpg">APS110</div>
-      <div class = "individualClass"><img class= "course-icon" src="images/uppal.jpg">APS111</div>
-      <div class = "individualClass"><img class= "course-icon" src="images/uppal.jpg">CIV100</div>
-      <div class = "individualClass">
-        <img class= "course-icon" src="images/uppal.jpg">
-        MAT186</div>
-      <div class = "individualClass"><img class= "course-icon" src="images/uppal.jpg">MAT188</div>
+    // Create an S3 instance
+    const s3 = new AWS.S3();
+
+    // Set AWS credentials (if not set via environment variables)
+    const credentials = {
+      accessKeyId: 'AKIAVMKLFLXFVOHCPBFF',
+      secretAccessKey: '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'
+    };
+    AWS.config.update({ credentials });
+    // Define parameters for retrieving the file
+    const params = {
+      Bucket: 'uoft2024questionbank',
+      Key: '2024winterECE110Q1a.png' // Path to the file in the bucket
+    };
+
+    const presignedUrl = s3.getSignedUrl('getObject', {
+      Bucket: 'uoft2024questionbank',
+      Key: '2024winterECE110Q1a.png',
+      Expires: 3600,
+    });
+    document.getElementById('myImage').src = presignedUrl;
+
+    // Now you can use `presignedUrl` in your frontend to display the image
+    console.log('hello');
+    console.log('Presigned URL:', presignedUrl);
+  </script>
+</head>
+
+<head>
+  <title>1st Year UofT Engineering Question Database</title>
+  <link rel="stylesheet" href="homePage.css">
+</head>
+
+<body>
+
+  <header class="header">
+    <div>1st Year Skule Exam Question Database</div>
+
+  </header>
+
+  <div class="grid">
+    <div class="semester">F TERM</div>
+    <div class="individualClass"><img class="course-icon" src="images/uppal.jpg">APS110</div>
+    <div class="individualClass"><img class="course-icon" src="images/uppal.jpg">APS111</div>
+    <div class="individualClass"><img class="course-icon" src="images/uppal.jpg">CIV100</div>
+    <div class="individualClass">
+      <img class="course-icon" src="images/uppal.jpg">
+      MAT186
     </div>
-    
-    <div class = "grid">
-      <div class = "semester">W TERM</div>
-      <div class = "individualClass"><img class= "course-icon" src="images/uppal.jpg">APS105</div>
-      <div class = "individualClass"><img class= "course-icon" src="images/uppal.jpg">APS112</div>
-      <a href="class.html"><div class = "individualClass"><img class= "course-icon" src="images/uppal.jpg">ECE110</div></a>
-      <div class = "individualClass"><img class= "course-icon" src="images/uppal.jpg">MAT187</div>
-      <div class = "individualClass"><img class= "course-icon" src="images/uppal.jpg">MIE100</div>
-    </div>
+    <div class="individualClass"><img class="course-icon" src="images/uppal.jpg">MAT188</div>
+  </div>
 
-    
-    
+  <div class="grid">
+    <div class="semester">W TERM</div>
+    <div class="individualClass"><img class="course-icon" src="images/uppal.jpg">APS105</div>
+    <div class="individualClass"><img class="course-icon" src="images/uppal.jpg">APS112</div>
+    <a href="class.html">
+      <div class="individualClass"><img class="course-icon" src="images/uppal.jpg">ECE110</div>
+    </a>
+    <div class="individualClass"><img class="course-icon" src="images/uppal.jpg">MAT187</div>
+    <div class="individualClass"><img class="course-icon" src="images/uppal.jpg">MIE100</div>
+  </div>
 
-  </body>
+
+
+
+</body>
+
 </html>
