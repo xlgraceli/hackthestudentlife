@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Question Name</title>
+  <link rel="stylesheet" href="questionPage.css">
+</head>
+
+<body>
+  <div class="class-name">
+    ECE110
+  </div>
+  <div class="exam-date">
+    Winter 2022 Term Test 2
+  </div>
+  <div class="category">
+    Circuits
+  </div>
+
+  <div><img class="question-image" src="images/2018TT1MagField.png"></div>
+
+  <button id="toggleButton" class="button" onclick="toggleAnswer()">
+    Show Answer
+  </button>
+  <div id="answer" class="answer-image">
+    <img src="images/2018TT1MagFieldAns.png">
+  </div>
+  <script>
+    window.onload = function () {
+      var answerImage = document.getElementById("answer");
+      answerImage.style.display = "none";
+    };
+    function toggleAnswer() {
+      var answerImage = document.getElementById("answer");
+      var toggleButton = document.getElementById("toggleButton");
+      if (answerImage.style.display === "none") {
+        answerImage.style.display = "block";
+        toggleButton.innerText = "Hide Answer";
+      } else {
+        answerImage.style.display = "none";
+        toggleButton.innerText = "Show Answer";
+
+      }
+    }
+  </script>
+
+
+
+</body>
+
+</html>
