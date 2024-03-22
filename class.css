@@ -33,16 +33,18 @@
 
 .main-section {
   display: grid;
-  border-width: 1px;
-  border-color: black;
-  border: solid;
+  padding: 30px;
 
 }
 
 
 .indiv-question {
-  height: 50px;
+  display: grid;
+
+  height: 100px;
   border: solid;
-  padding: 10px;
+  border-width: 1px;
+  border-color: black;
+
 
 }
