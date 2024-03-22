@@ -1,32 +1,34 @@
-// server.js
-const express = require('express')
-const { CohereClient } = require('cohere-ai')
+const AWS = require('aws-sdk');
+const fs = require('fs');
 
-const { MongoClient, ServerApiVersion } = require('mongodb')
-const uri =
-  'mongodb+srv://xlgraceli:<password>@questionbank.peaeot6.mongodb.net/'
+// Set AWS credentials (if not set via environment variables)
+const credentials = {
+  accessKeyId: 'AKIAVMKLFLXFVOHCPBFF',
+  secretAccessKey: '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'
+};
+AWS.config.update({ credentials });
 
-// Create a MongoClient with a MongoClientOptions object to set the Stable API version
-const client = new MongoClient(uri, {
-  serverApi: {
-    version: ServerApiVersion.v1,
-    strict: true,
-    deprecationErrors: true,
-  },
-})
+// Create an S3 instance
+const s3 = new AWS.S3();
 
-async function run() {
-    try {
-      // Connect the client to the server	(optional starting in v4.7)
-      await client.connect()
-      // Send a ping to confirm a successful connection
-      await client.db('admin').command({ ping: 1 })
-      console.log(
-        'Pinged your deployment. You successfully connected to MongoDB!'
-      )
-    } finally {
-      // Ensures that the client will close when you finish/error
-      await client.close()
-    }
+// Define parameters for retrieving the file
+const params = {
+  Bucket: 'uoft2024questionbank',
+  Key: '2024winterECE110Q1a.png' // Path to the file in the bucket
+};
+
+// Retrieve the file from S3
+s3.getObject(params, (err, data) => {
+  if (err) {
+    console.error('Error retrieving file:', err);
+  } else {
+    // Write the file to the local filesystem
+    fs.writeFile('downloaded_file.txt', data.Body, (err) => {
+      if (err) {
+        console.error('Error writing file:', err);
+      } else {
+        console.log('File downloaded successfully.');
+      }
+    });
   }
-  run().catch(console.dir)
+});
