@@ -32,7 +32,7 @@
 }
 
 .main-section {
-  display: grid;
+  display: flex;
   padding: 30px;
 
 }
