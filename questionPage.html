@@ -22,9 +22,30 @@
 
  <div><img class="question-image" src="images/2024winterECE110Q1a.png"></div>
 
-  <button class="button">
+  <button id="toggleButton" class="button" onclick="toggleAnswer()">
     Show Answer
   </button>
+  <div id="answer" class="answer-image">
+    <img src="images/2024winterECE110A1a.png">
+  </div>
+  <script>
+    window.onload = function() {
+      var answerImage = document.getElementById("answer");
+      answerImage.style.display = "none";
+    };
+    function toggleAnswer() {
+      var answerImage = document.getElementById("answer");
+      var toggleButton = document.getElementById("toggleButton");
+      if (answerImage.style.display === "none") {
+        answerImage.style.display = "block";
+        toggleButton.innerText = "Hide Answer";
+      } else {
+        answerImage.style.display = "none";
+        toggleButton.innerText = "Show Answer"; 
+
+      }
+    }
+  </script>
 
 
 
