@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Question Name</title>
+  <link rel="stylesheet" href="questionPage.css">
+</head>
+
+<body>
+  <div class="class-name">
+    ECE110
+  </div>
+  <div class="exam-date">
+    2017 Term Test 1 2c
+  </div>
+  <div class="category">
+    Capacitors
+  </div>
+
+ <div><img class="question-image" src="images/2017TT1_3a.PNG"></div>
+
+  <button id="toggleButton" class="button" onclick="toggleAnswer()">
+    Show Answer
+  </button>
+  <div id="answer" class="answer-image">
+    <img src="images/2017TT1Ans_3a.PNG">
+  </div>
+  <script>
+    window.onload = function() {
+      var answerImage = document.getElementById("answer");
+      answerImage.style.display = "none";
+    };
+    function toggleAnswer() {
+      var answerImage = document.getElementById("answer");
+      var toggleButton = document.getElementById("toggleButton");
+      if (answerImage.style.display === "none") {
+        answerImage.style.display = "block";
+        toggleButton.innerText = "Hide Answer";
+      } else {
+        answerImage.style.display = "none";
+        toggleButton.innerText = "Show Answer"; 
+
+      }
+    }
+  </script>
+
+
+
+</body>
+
+</html>
