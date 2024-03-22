@@ -41,8 +41,14 @@
 
 
 .indiv-question {
+  /* 
+  border: solid;
+   */
+  display: grid;
   height: 50px;
+  border-width: 1px;
+  border-color: black;
   border: solid;
   padding: 10px;
-
+  margin: 10px;
 }
